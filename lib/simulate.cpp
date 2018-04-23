@@ -42,19 +42,19 @@ void sumulate::start(std::ofstream &out)
 			int _random = distribution(generator);   //get a random number
 			std::vector<std::string> pro = split("\t", m_Pcandidates[_random]->first);
 
-			std::cout << "protein pair" << pro[0] << " " << pro[1] << std::endl;
+			//std::cout << "protein pair" << pro[0] << " " << pro[1] << std::endl;
 
-			std::cout <<  "before:" << score << std::endl;
+			//std::cout <<  "before:" << score << std::endl;
 
 			score += m_Pali->update(pro[0], pro[1], Ti, s);
 			out << score << "\n";
 			n++;
 
-			std::cout << "after:" << score << std::endl;
-			std::cout << "ali:" << std::endl;
+			//std::cout << "after:" << score << std::endl;
+			//std::cout << "ali:" << std::endl;
 			m_Pali->writeAlignment(m_Soutput);
 			m_Pali->printMap();
-			std::cout << std::endl;
+			//std::cout << std::endl;
 		}
 		std::cout << "# iterator" << i << ",alignment score :" << score << std::endl;
 		i = i + 1;

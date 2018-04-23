@@ -90,7 +90,7 @@ void ReadBitscore::colected_candidates(double beta,
 	}
 	else
 	{
-		m_dMeanf = 0;
+		m_dMeanf = max;
 	}
 	std::cout << "# select finish!" << std::endl;
 	std::cout << "# mean of final score: " << res / protein_score.size() << std::endl;
